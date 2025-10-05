@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POSSAP - Police Special Services for Automation Project</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Ubuntu', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Cantarell, sans-serif;
+            background-color: #f5f5f5;
+            color: #333333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .welcome-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .welcome-title {
+            font-size: 2.5rem;
+            color: #2F4CB0;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .welcome-subtitle {
+            font-size: 1.2rem;
+            color: #666666;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        .welcome-description {
+            font-size: 1rem;
+            color: #333333;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: #2F4CB0;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #2542A0;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: #f8f8f8;
+            color: #333333;
+            border: 1px solid #e0e0e0;
+        }
+
+        .btn-secondary:hover {
+            background-color: #e8e8e8;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .welcome-title {
+                font-size: 2rem;
+            }
+            
+            .welcome-subtitle {
+                font-size: 1rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <!-- Logos -->
+            <div class="logos">
+                <img src="Themes/PoliceTheme/Styles/images/Logopolice.png" alt="Nigeria Police Logo" class="police-logo">
+            </div>
+            
+            <!-- Hamburger Menu Button -->
+            <button class="hamburger-menu" id="hamburgerMenu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <!-- Navigation -->
+            <nav class="nav" id="navMenu">
+                <a href="https://possap.gov.ng/p/select-service" class="nav-link" target="_blank">Request Service</a>
+                <a href="https://possap.gov.ng/p/run-face-verification" class="nav-link" target="_blank">Virtual Verification</a>
+                <a href="validate-document" class="nav-link">Validate Document</a>
+                <a href="https://possap.gov.ng/p/about" class="nav-link" target="_blank">About</a>
+                <a href="https://possap.gov.ng/p/contact" class="nav-link" target="_blank">Contact</a>
+                <div class="login-section">
+                    <a href="https://possap.gov.ng/p/login" target="_blank" class="login-btn">Login | Sign Up</a>
+                </div>
+            </nav>
+            
+            <!-- Desktop Login Button -->
+            <div class="login-section desktop-login">
+                <a href="https://possap.gov.ng/p/login" target="_blank" class="login-btn" style="text-decoration: none; color: white;">Login | Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="welcome-card">
+            <h1 class="welcome-title">Welcome to POSSAP</h1>
+            <p class="welcome-subtitle">Police Special Services for Automation Project</p>
+            <p class="welcome-description">
+                A secure and efficient platform for requesting and managing Police Specialized Services online. 
+                Validate documents, request services, and access virtual verification tools with ease.
+            </p>
+            
+            <div class="action-buttons">
+                <a href="validate-document" class="btn btn-primary">
+                    <i class="fas fa-file-check"></i>
+                    Validate Document
+                </a>
+                <a href="navigation" class="btn btn-secondary">
+                    <i class="fas fa-compass"></i>
+                    Browse All Pages
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- Left Section: Logo and Description -->
+            <div class="footer-left">
+                <div class="footer-logo">
+                    <img src="Themes/PoliceTheme/Styles/images/PossapLogo.svg" alt="POSSAP Logo" />
+                </div>
+                <div class="footer-text">
+                    A secure way to request and pay for your Police Specialized Services online.
+                </div>
+            </div>
+            
+            <!-- Middle Section: Navigation Links -->
+            <div class="footer-nav">
+                <a href="https://possap.gov.ng/p/about" class="footer-nav-link" target="_blank">About</a>
+                <a href="https://possap.gov.ng/p/contact" class="footer-nav-link" target="_blank">Contact</a>
+                <a href="#" class="footer-nav-link">Privacy Policy</a>
+                <a href="#" class="footer-nav-link">Terms Of Use</a>
+            </div>
+            
+            <!-- Right Section: Social Media -->
+            <div class="footer-right">
+                <div class="footer-social">
+                    <div class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </div>
+                    <div class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger Menu Toggle
+        function toggleHamburgerMenu() {
+            const hamburgerMenu = document.getElementById('hamburgerMenu');
+            const navMenu = document.getElementById('navMenu');
+            
+            hamburgerMenu.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        }
+        
+        // Event Listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hamburger menu click handler
+            const hamburgerMenu = document.getElementById('hamburgerMenu');
+            if (hamburgerMenu) {
+                hamburgerMenu.addEventListener('click', toggleHamburgerMenu);
+            }
+            
+            // Social media icons click handlers
+            const socialIcons = document.querySelectorAll('.social-icon');
+            socialIcons.forEach(icon => {
+                icon.addEventListener('click', function() {
+                    const iconClass = this.querySelector('i').className;
+                    if (iconClass.includes('instagram')) {
+                        window.open('https://www.instagram.com/possap_ngg', '_blank');
+                    } else if (iconClass.includes('facebook')) {
+                        window.open('https://www.facebook.com/profile.php?id=61552184257184', '_blank');
+                    } else if (iconClass.includes('twitter')) {
+                        window.open('https://twitter.com/possap_ngg', '_blank');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
