@@ -10,7 +10,7 @@ RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
 RewriteRule ^ /%1 [NC,L,R=301]
 
 # Handle directory requests
-DirectoryIndex index.html validate-document.html
+DirectoryIndex index.html v.html validate-document.html
 
 # Enable compression
 <IfModule mod_deflate.c>
