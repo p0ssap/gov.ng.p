@@ -1,7 +1,7 @@
 // Page Navigation Functions
 function showDocumentInfo() {
     // Navigate to the document info page
-    window.location.href = 'validate-document/PSS08180000755480';
+    window.location.href = 'PSS08180000755370.html';
 }
 
 function showValidationForm() {
