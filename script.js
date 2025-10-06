@@ -110,17 +110,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Help links click handlers
+    // Help links click handlers - only for "what is this" links
     const helpLinks = document.querySelectorAll('.help-link');
     helpLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
+            // Only prevent default for "what is this" links, allow "Click here" to work normally
             if (this.textContent.includes('what is this')) {
+                e.preventDefault();
                 alert('A POSSAP Approval Number is a unique identifier for approved police services. It starts with "PSS" followed by 14 digits.');
-            } else if (this.textContent.includes('Click here')) {
-                alert('If you don\'t have an approval number, you may need to apply for the service first through the "Request Service" section.');
             }
+            // For "Click here" links, let them navigate normally (no preventDefault)
         });
     });
     
@@ -132,14 +131,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Login button click handler (now a link to external site)
-    const loginBtn = document.querySelector('.login-btn');
-    if (loginBtn && loginBtn.tagName === 'BUTTON') {
-        loginBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            alert('Login functionality will be implemented in the full application.');
-        });
-    }
+    // Login button click handler - removed since login links now work directly
+    // The login links are now <a> tags that navigate to https://possap.gov.ng/p/login
     
     // Navigation links click handlers
     const navLinks = document.querySelectorAll('.nav-link');
