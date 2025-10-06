@@ -29,6 +29,49 @@
         .step.current .step-icon i {
             color: #ffffff !important;
         }
+
+        /* Tooltip styles */
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            background-color: #000000;
+            color: #ffffff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 10px 15px;
+            z-index: 1000;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            font-size: 14px;
+            line-height: 1.4;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+
+        .tooltip::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #000000 transparent transparent transparent;
+        }
+
+        .tooltip-container:hover .tooltip,
+        .tooltip-container.show-tooltip .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -92,7 +135,12 @@
             <div class="card">
                 <div class="card-header">
                     <h1 class="card-title">POSSAP Approval Number</h1>
-                    <a href="#" class="help-link">what is this?</a>
+                    <div class="tooltip-container" id="helpTooltip">
+                        <a href="#" class="help-link">what is this?</a>
+                        <div class="tooltip">
+                            The Police Specialized Service Automation Project Approval Number is a unique number that is systematically assigned to each approved request generated on the Police Specialized Services Portal.
+                        </div>
+                    </div>
                 </div>
                 
                 <p class="instruction">Enter an approval number below</p>
@@ -243,6 +291,25 @@
             const hamburgerMenu = document.getElementById('hamburgerMenu');
             if (hamburgerMenu) {
                 hamburgerMenu.addEventListener('click', toggleHamburgerMenu);
+            }
+            
+            // Tooltip functionality
+            const helpTooltip = document.getElementById('helpTooltip');
+            if (helpTooltip) {
+                const helpLink = helpTooltip.querySelector('.help-link');
+                
+                // Click handler for tooltip
+                helpLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    helpTooltip.classList.toggle('show-tooltip');
+                });
+                
+                // Close tooltip when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!helpTooltip.contains(e.target)) {
+                        helpTooltip.classList.remove('show-tooltip');
+                    }
+                });
             }
             
             // Social media icons click handlers
